@@ -107,44 +107,5 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
-
-    <script>
-
-        var map = L.map('map').setView([51.1694, 71.4491], 12);
-
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
-
-
-        document.getElementById('predictButton').addEventListener('click', function() {
-            var arrivalHour = document.getElementById('arrival_hour').value;
-            var arrivalWeekday = document.getElementById('arrival_weekday').value;
-            var dwellTime = document.getElementById('dwell_time_in_seconds').value;
-
-            fetch('http://127.0.0.1:5000/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    arrival_hour: arrivalHour,
-                    arrival_weekday: arrivalWeekday,
-                    dwell_time_in_seconds: dwellTime
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerText = `Предсказанное время прибытия: ${data.predicted_arrival}`;
-
-                L.marker([51.1694, 71.4491]).addTo(map)
-                    .bindPopup(`Предсказанное время: ${data.predicted_arrival}`)
-                    .openPopup();
-            })
-            .catch(error => console.error('Ошибка:', error));
-        });
-    </script>
 </body>
 </html>
