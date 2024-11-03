@@ -4,12 +4,16 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 import pandas as pd
 
-# Путь к файлам данных
+# import os
+import os
+
+# Определяем относительный путь к файлам данных
 file_paths = {
-    'trips': r'C:\Users\User\Documents\trips.csv',
-    'run_data': r'C:\Users\User\Documents\run_data.csv',
-    'dwell_sorted': r'C:\Users\User\Documents\dwell_sorted.csv'
+    'trips': os.path.join('data', 'trips.csv'),
+    'run_data': os.path.join('data', 'run_data.csv'),
+    'dwell_sorted': os.path.join('data', 'dwell_sorted.csv')
 }
+
 
 # Чтение данных
 trips = pd.read_csv(file_paths['trips'])

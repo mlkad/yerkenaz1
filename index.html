@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>Предсказание времени прибытия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
 
-         {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -15,8 +18,10 @@
 
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+              font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            background-color: #ececec;
             color: #333;
         }
 
@@ -35,14 +40,15 @@
             text-align: center;
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #4CAF50;
+            color: #9dd2f6;
+
         }
 
 
         label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold;
+              font-weight: 400;
         }
 
         input[type="number"] {
@@ -57,7 +63,7 @@
         button {
             width: 100%;
             padding: 15px;
-            background-color: #4CAF50;
+            background-color: #9dd2f6;
             color: white;
             border: none;
             border-radius: 5px;
@@ -67,7 +73,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #8bd0f6;
         }
 
 
@@ -75,7 +81,7 @@
             margin-top: 20px;
             font-size: 1.5em;
             text-align: center;
-            color: #4CAF50;
+            color: #9dd2f6;
         }
 
 
